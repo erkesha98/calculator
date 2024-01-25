@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@400;500;700&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+  font-style: 18px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.container {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 256px;
+  text-align: center;
+  border: 10px solid hsla(0, 0%, 0%, 0.854);
+  background: hsla(0, 0%, 0%, 0.854);
+  border-radius: 5px;
+}
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(60px, auto);
+}
+
+input {
+  height: 75px;
+  width: 249px;
+  background-color: hsla(0, 0%, 0%, 0.72);
+  border: 0px;
+  color: white;
+  text-align: right;
+  font-size: 25px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+#clear {
+  grid-column: 1/3;
+  grid-row: 1;
+  color: #363434d4;
+}
+#result {
+  grid-column: 3/5;
+  grid-row: 5;
+  color: #363434d4;
+}
+#backspace {
+  color: #363434d4;
+}
+button {
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background:#363434d4;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+input:focus,
+input:active,
+button:active{
+    outline: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.highlight{
+    background: hsla(13, 88%, 49%, 0.692);
 }
